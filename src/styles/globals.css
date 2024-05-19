@@ -1,0 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html,body,:root{
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 20px;
+  color: #000000;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #f2f2f2;
+
+}
+
+@layer components {
+  /* Colors and Shadow */
+
+  svg#cardfront,
+  svg#cardback {
+    @apply w-full shadow-xl rounded-[22px];
+  }
+
+  .primarycolor {
+    @apply fill-[#00acc1];
+  }
+
+  .secondarycolor {
+    @apply fill-[#00acc1];
+
+  }
+
+  /* FRONT OF CARD */
+  #svgname {
+    @apply uppercase;
+  }
+
+  #cardfront .st2 {
+    @apply fill-[#FFFFFF];
+  }
+
+  #cardfront .st3 {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 600;
+  }
+
+  #cardfront .st4 {
+    @apply text-[54px];
+  }
+
+  #cardfront .st5 {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 400;
+  }
+
+  #cardfront .st6 {
+    @apply text-[33px];
+  }
+
+  #cardfront .st7 {
+    @apply fill-[#FFFFFF] opacity-60;
+  }
+
+  #cardfront .st8 {
+    @apply text-[24px];
+  }
+
+  #cardfront .st9 {
+    @apply text-[36px];
+  }
+
+  #cardfront .st10 {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 300;
+  }
+
+  #cardfront .st11 {
+    @apply text-[16px];
+  }
+
+  #cardfront .st12 {
+    @apply fill-[#4C4C4C];
+  }
+
+  /* BACK OF CARD */
+  #cardback .st0 {
+    @apply fill-none;
+    stroke: #0F0F0F;
+    stroke-miterlimit: 10;
+  }
+
+  #cardback .st2 {
+    @apply fill-[#111111];
+  }
+
+  #cardback .st3 {
+    @apply fill-[#f2f2f2]
+  }
+
+  #cardback .st4 {
+    @apply fill-[#D8D2DB]
+  }
+
+  #cardback .st5 {
+    @apply fill-[#C4C4C4]
+  }
+
+  #cardback .st6 {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 400;
+  }
+
+  #cardback .st7 {
+    @apply text-[27px];
+  }
+
+  #cardback .st8 {
+    @apply opacity-60;
+  }
+
+  #cardback .st9 {
+    @apply fill-[#f0f0f0];
+  }
+
+  #cardback .st10 {
+    @apply text-[24px];
+  }
+
+  #cardback .st11 {
+    @apply fill-[#eaeaea];
+  }
+
+  #cardback .st12 {
+    font-family: 'Rock Salt', cursive;
+  }
+
+  #cardback .st13 {
+    @apply text-[38px];
+  }
+
+  /* FLIP ANIMATION */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .creditcard {
+    width: 100%;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transition: -webkit-transform 0.6s;
+    -webkit-transition: -webkit-transform 0.6s;
+    transition: transform 0.6s;
+    transition: transform 0.6s, -webkit-transform 0.6s;
+    cursor: pointer;
+  }
+
+  .front, .back {
+    position: absolute;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    color: #47525d;
+  }
+
+  .back {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+
+  .flipped {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+
+}
+
+.flip-exit {
+  transform: rotateY(0deg);
+}
+
+.flip-exit-active {
+  transform: rotateY(180deg);
+  transition: transform 600ms;
+  transition-timing-function: cubic-bezier(.57,.21,.69,1.25);
+}
+
+.flip-exit-done {
+  transform: rotateY(180deg);
+}
+
+.flip-enter {
+  transform: rotateY(180deg);
+}
+
+.flip-enter-active {
+  transform: rotateY(0deg);
+  transition: transform 600ms;
+  transition-timing-function: cubic-bezier(.57,.21,.69,1.25);
+}
+
+.flip-enter-done {
+  transform: rotateY(0deg);
+}
+
+
+/* ========================================================================================================= */
+.box-gray{
+  padding: 8px;
+  /* Centraliza em relação ao pai
+  margin-right: auto;
+  margin-left: auto;
+  /* 100% do pai */
+  /* width: 100%; */
+  /* height: 100%; */
+  /*Vai acompanha a tela até chegar em seu limite*/
+  /* max-width: 700px; */
+
+  /* min-height: 300px;  */
+  background-color: #E7E7E7;
+
+  border-radius: 10px;
+}
+
+.select-box{
+  background-color: #fff;
+  color: #000000;
+}
+
+.background-load{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.pop-b-r{
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+}
